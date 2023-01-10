@@ -6,5 +6,5 @@ Remember to import database to mysql.
 Default students and teachers are added so you can change how the program works
 
 PL
-Pamiętaj, aby aplikacja była trzymana w tej samej lokalizacji co folder uczniowie. Pamiętaj również, aby zmienić datę dostępu bazy danych mysql w pliku mysqlConnect.py. Niestety zdjęcia trzeba dodać ręcznie, nazwa tych zdjęc to nickname z bazy danych z rozszerzeniem .jpg. Pamiętaj zaimportować baze danych do mysql.
+Pamiętaj, aby aplikacja była trzymana w tej samej lokalizacji co folder uczniowie. Pamiętaj również, aby zmienić danę dostępu bazy danych mysql w pliku mysqlConnect.py. Niestety zdjęcia trzeba dodać ręcznie, nazwa tych zdjęc to nickname z bazy danych z rozszerzeniem .jpg. Pamiętaj zaimportować baze danych do mysql.
 Defaltowi studenci oraz nauczyciele są dodani do bazy, tak aby można było sprawdzić jak działa program.
