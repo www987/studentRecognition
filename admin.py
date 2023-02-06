@@ -157,7 +157,7 @@ def admin(adminID):
                 window["studentStatusMessage"].update(visible=True)
             else:
                 window["studentStatusMessage"].update("Poprawnie dodano ucznia",visible=True)
-                nickname = name + '_' + surname[0]
+                nickname = name.lower() + '_' + surname.lower()[0]
             try:
                 cur.execute("INSERT INTO student VALUES('',?,?,?,?)",(name,surname, password, nickname,))
             except mariadb.Error as e:
@@ -185,7 +185,7 @@ def admin(adminID):
                 cur.execute("SET @row_number = 0;")
                 cur.execute("SELECT (@row_number:=@row_number+1) AS num, subject.name, presence.checkingTime, CONCAT(student.name,' ', student.surname) AS studentData  FROM presence INNER JOIN SUBJECT ON presence.subjectID = SUBJECT.ID INNER JOIN student ON presence.studentID = student.ID WHERE DATE(presence.checkingTime) = ?;", (inputDateRMD,))
                 presenceData = cur.fetchall()
-                print(presenceData)
+                print(presenceData, inputDateRMD)
                 presenceDataList = [[0 for x in range(len(presenceData[y]))] for y in range(len(presenceData))]
                 for i in range(len(presenceData)):
                     for j in range(len(presenceData[i])):

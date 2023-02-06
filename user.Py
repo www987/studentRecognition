@@ -14,7 +14,7 @@ def user(userID):
         NAME,SURNAME = cur.fetchone()
         print(NAME,SURNAME)
         cur.execute("SET @row_number = 0;")
-        cur.execute("SELECT (@row_number:=@row_number+1) AS num, subject.name, presence.checkingTime FROM presence INNER JOIN SUBJECT ON presence.subjectID = SUBJECT.ID WHERE presence.studentID = ?;", (1,))
+        cur.execute("SELECT (@row_number:=@row_number+1) AS num, subject.name, presence.checkingTime FROM presence INNER JOIN SUBJECT ON presence.subjectID = SUBJECT.ID WHERE presence.studentID = ?;", (userID,))
     except mariadb.Error as e:
         print("error")
     data = cur.fetchall()
